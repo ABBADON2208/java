@@ -1,0 +1,58 @@
+import java.util.Arrays;
+import java.util.*;
+import java.io.*;
+
+//created a family object to sort based on age from high to low
+class family
+{
+	public int age;
+	public String name;
+	public String occupation;
+
+	public family(int age,String name, String occupation)
+	{
+	  this.age=age;
+	  this.name=name;
+	  this.occupation=occupation;
+	}
+
+	public String toString()
+	{
+	  return this.name+ " is " + this.age + " years old and is a  " + this.occupation; /*overidden the toString methof*/
+	}
+}
+
+//creating my own custom sort based on object age
+class The_comparator implements Comparator<family>
+{
+	@Override
+	 public int compare(family a, family b)
+	 {
+	    return -(a.age-b.age);
+	 }
+}
+
+public class myObjectSorting
+{
+	public static void main(String[] args)
+	{
+	   family obj1 = new family(23,"Ankit kumar","Student");
+	   family obj2 = new family(25,"Ashutosh kumar","software enginneer");
+	   family obj3 = new family(42,"Sobha Sharma","HouseWife");
+	   family obj4 = new family(45,"Jeetendra Sharma","Police Inspector");
+
+	   family[] array = {obj1,obj2,obj3,obj4};
+
+	   System.out.println("Unsorted Array is : ");
+
+	   for(Object txt : array)
+	      System.out.println(txt);
+
+	   Arrays.sort(array,new The_comparator());
+
+	   System.out.println("\n" + "sorted Array is : ");
+
+	   for(Object txt : array)
+	      System.out.println(txt);
+	}
+}
