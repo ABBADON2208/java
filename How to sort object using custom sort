@@ -56,3 +56,21 @@ public class myObjectSorting
 	      System.out.println(txt);
 	}
 }
+
+
+OUTPUT :-
+
+
+Unsorted Array is :
+Ankit kumar is 23 years old and is a  Student
+Ashutosh kumar is 25 years old and is a  Student
+Sobha Sharma is 42 years old and is a  HouseWife
+Jeetendra Sharma is 45 years old and is a  Police Inspector
+
+sorted Array is :
+Jeetendra Sharma is 45 years old and is a  Police Inspector
+Sobha Sharma is 42 years old and is a  HouseWife
+Ashutosh kumar is 25 years old and is a  Student
+Ankit kumar is 23 years old and is a  Student
+
+
