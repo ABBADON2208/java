@@ -40,20 +40,41 @@ public class myObjectSorting
 	   family obj2 = new family(25,"Ashutosh kumar","software enginneer");
 	   family obj3 = new family(42,"Sobha Sharma","HouseWife");
 	   family obj4 = new family(45,"Jeetendra Sharma","Police Inspector");
+              
+           /* using array*/
+	    
+	   // family[] array = {obj1,obj2,obj3,obj4};
 
-	   family[] array = {obj1,obj2,obj3,obj4};
+	   // System.out.println("Unsorted Array is : ");
 
-	   System.out.println("Unsorted Array is : ");
+	   // for(Object txt : array)
+	   //    System.out.println(txt);
 
-	   for(Object txt : array)
-	      System.out.println(txt);
+	   // Arrays.sort(array,new The_comparator());
 
-	   Arrays.sort(array,new The_comparator());
+	   // System.out.println("\n" + "sorted Array is : ");
 
-	   System.out.println("\n" + "sorted Array is : ");
+	   // for(Object txt : array)
+	   //    System.out.println(txt);
+	      
+	      
+	   // family[] array = {obj1,obj2,obj3,obj4};
+	   // List<family> list = new ArrayList<>(Arrays.asList(array));
 
-	   for(Object txt : array)
-	      System.out.println(txt);
+	   // for(Object txt : list)
+	   //    System.out.println(txt);
+
+
+
+           /* using collection*/
+
+	   // Collections.sort(list,new The_comparator());
+
+	   // System.out.println("\n" + "sorted Array is : ");
+
+	   // for(Object txt : list)
+	   //    System.out.println(txt);
+	      
 	}
 }
 
