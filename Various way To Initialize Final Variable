@@ -1,0 +1,36 @@
+class FinalVariable
+{
+	final int CONSTANT=1;
+	final static double PI = 3.4565676;
+	final int CAPACITY;
+	final int SIZE;
+	final static double PI2;
+
+
+	{
+	   CAPACITY =25;//instance initializer
+	}
+
+	static 
+	{
+	   PI2 = Math.PI;//static initializer
+	}
+
+	FinalVariable()
+	{
+	   SIZE =20;// if there are more than on constructor we have to initialize in every cvontructor 
+	}
+
+	public static void main(String args[])
+	{
+	   FinalVariable obj = new FinalVariable();
+       
+       System.out.println("value of direct initialize final variable is : " + obj.CONSTANT);
+       System.out.println("value of direct initialize static final variable is : " + obj.PI);
+       System.out.println("value of instance initialize final variable is : " + obj.CAPACITY);
+       System.out.println("value of static initialize final variable is : " + obj.PI2);
+       System.out.println("value of constructor initialize final variable is : " + obj.SIZE);
+
+	}
+
+}
