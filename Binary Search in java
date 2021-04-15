@@ -1,0 +1,55 @@
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.*;
+
+class BinarySearch
+{
+	public static void main(String[] args){
+    
+
+    //demonstrate binary search in array
+
+    Integer[] array = {19,238,38,3456,2,334,4,5,67,8,9,2222,0,788};
+    Arrays.sort(array);
+
+    int result = Arrays.binarySearch(array,67);
+
+    if(result>=0)
+       System.out.println("Found at position : " + result);
+
+    else
+       System.out.println("Not Found");
+
+    System.out.println("Sorted array Was : " + Arrays.toString(array));
+
+
+    //demonstrate binary search in collections
+
+
+    List<Integer> list = new ArrayList<>(Arrays.asList(array));
+    Collections.sort(list);
+
+    int resultnew = Collections.binarySearch(list,67);
+
+
+    if(resultnew >=0)
+       System.out.println("Found at position : " + resultnew);
+
+    else
+       System.out.println("Not Found");
+
+
+     System.out.println("Sorted list Was : " + list);
+
+
+  }
+}
+
+
+
+OUTPUT :-
+
+Found at position : 8
+Sorted array Was : [0, 2, 4, 5, 8, 9, 19, 38, 67, 238, 334, 788, 2222, 3456]
+Found at position : 8
+Sorted list Was : [0, 2, 4, 5, 8, 9, 19, 38, 67, 238, 334, 788, 2222, 3456]
