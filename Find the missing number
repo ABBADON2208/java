@@ -1,0 +1,15 @@
+ class Solutions
+ {
+   public static int missingNumber(int[] array,int N){
+   int xor1 = array[0];
+   int xor2=1;
+   
+   for(int i: array)
+     xor1^=i;
+     
+   for(int i=2;i<=(N+1);i++)
+     xor2^=i;
+     
+   return xor1^xor2;
+  }
+}
