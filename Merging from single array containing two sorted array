@@ -1,0 +1,35 @@
+import java.util.*;
+
+class Solution{
+   public int[] merge(int[] array,int mid){
+
+   int[] result = new int[array.length];
+   int i=0,k=0,j=mid+1;
+
+   while(i<=mid && j<=array.length-1)
+   {
+
+      if(array[i]<array[j])
+        result[k++]=array[i++];
+
+      else 
+        result[k++] = array[j++];
+   }
+
+   while(i<=mid)
+   	  result[k++]=array[i++];
+
+   while(j<=array.length-1)
+   	  result[k++]=array[j++];
+
+   return result;
+   }
+}
+
+class MergeTwoSortedArray
+{
+	public static void main(String[] args){
+    Solution obj = new Solution();
+    System.out.println(Arrays.toString(obj.merge(new int[]{7,8,11,13,17,18,327,3733,3944,9233,1,2,3},9)));
+	}
+}
