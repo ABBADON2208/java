@@ -1,0 +1,45 @@
+import java.util.*;
+
+class Solution{
+   public int[] merge(int[] array1,int[] array2){
+
+   int[] result = new int[array1.length + array2.length];
+   int i=0,k=0,j=0;
+
+   while(i<array1.length || j<array2.length)
+   {
+      int val1=Integer.MAX_VALUE;
+      int val2=Integer.MAX_VALUE;
+
+      if(i<array1.length)
+        val1 = array1[i];
+        
+
+      if(j<array2.length)
+        val2 = array2[j];
+    
+
+      if(val1<=val2)
+      {
+        result[k++] = val1;
+        i++;
+      }
+
+      else 
+      {
+        result[k++] = val2;
+        j++;
+      }
+   }
+
+   return result;
+   }
+}
+
+class MergeTwoSortedArray
+{
+	public static void main(String[] args){
+    Solution obj = new Solution();
+    System.out.println(Arrays.toString(obj.merge(new int[]{7,9,18,19,22},new int[]{1,6,9,11})));
+	}
+}
