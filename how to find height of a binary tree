@@ -1,0 +1,108 @@
+import java.util.LinkedList;
+import java.util.Queue;
+   
+// A binary tree node
+class Node 
+{
+    int data;
+    Node left, right;
+   
+    Node(int item) 
+    {
+        data = item;
+        left = right;
+    }
+}
+   
+public class BinaryTreeHeight 
+{
+    Node root;
+   
+    
+    int treeHeight(Node node) //method1
+    {
+        // Base Case
+        if (node == null)
+            return 0;
+   
+        Queue<Node> q = new LinkedList();
+       
+        q.add(node);
+        int height = 0;
+   
+        while (1 == 1) 
+        {
+            
+            int nodeCount = q.size();
+            if (nodeCount == 0)
+                return height;
+            height++;
+           
+            while (nodeCount > 0) 
+            {
+                Node newnode = q.peek();
+                q.remove();
+                if (newnode.left != null)
+                    q.add(newnode.left);
+                if (newnode.right != null)
+                    q.add(newnode.right);
+                nodeCount--;
+            }
+        }
+    }
+
+    int treeHeight(Node root)  //method2
+    {
+        if(root==null)
+            return 0;
+
+        Queue<Node> list = new LinkedList<>();
+        list.add(root);
+        list.add(null);
+        int height=0;
+
+        while(!list.isEmpty())
+        {
+          Node temp=list.remove();
+
+          if(temp!=null)
+          { 
+              if(temp.left!=null)
+                list.add(temp.left);
+              
+              if(temp.right!=null)
+                 list.add(temp.right);
+          }
+
+          else
+          {
+            height++;
+
+            if(!list.isEmpty())
+                list.add(null);
+          }
+        }
+
+        return height;
+
+    }
+   
+    // Driver program to test above functions
+    public static void main(String args[]) 
+    {
+        BinaryTreeHeight tree = new BinaryTreeHeight();
+          
+        // Let us create a binary tree shown in above diagram
+        tree.root = new Node(1);
+        tree.root.left = new Node(2);
+        tree.root.right = new Node(3);
+        tree.root.left.left = new Node(4);
+        tree.root.left.right = new Node(5);
+        tree.root.left.left.left = new Node(4);
+         tree.root.left.left.left.left = new Node(4);
+        System.out.println("Height of tree is " + tree.treeHeight(tree.root));
+    }
+}
+ 
+
+
